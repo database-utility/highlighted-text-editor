@@ -86,7 +86,7 @@ public struct HighlightRule {
     }
 }
 
-internal protocol HighlightingTextEditor {
+public protocol HighlightingTextEditor {
     var text: String { get set }
     var highlightRules: [HighlightRule] { get }
 }
@@ -98,7 +98,7 @@ public typealias OnCommitCallback = EmptyCallback
 public typealias OnEditingChangedCallback = EmptyCallback
 public typealias OnTextChangeCallback = (_ editorContent: String) -> Void
 
-extension HighlightingTextEditor {
+public extension HighlightingTextEditor {
     var placeholderFont: SystemColorAlias { SystemColorAlias() }
 
     static func getHighlightedText(text: String, highlightRules: [HighlightRule]) -> NSMutableAttributedString {

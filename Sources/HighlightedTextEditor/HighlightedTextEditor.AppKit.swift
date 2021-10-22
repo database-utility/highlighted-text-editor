@@ -19,13 +19,13 @@ public struct HighlightedTextEditor: NSViewRepresentable, HighlightingTextEditor
         public let scrollView: SystemScrollView?
     }
 
-    @Binding var text: String {
+    @Binding public var text: String {
         didSet {
             onTextChange?(text)
         }
     }
 
-    let highlightRules: [HighlightRule]
+    public let highlightRules: [HighlightRule]
 
     private(set) var onEditingChanged: OnEditingChangedCallback?
     private(set) var onCommit: OnCommitCallback?
